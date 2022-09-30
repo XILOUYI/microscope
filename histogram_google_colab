@@ -1,0 +1,15 @@
+from google.colab import drive 
+drive.mount('/content/gdrive')
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df=pd.read_csv('gdrive/My Drive/b1.csv', header = None ,quoting=2)
+df.hist(bins=50)
+plt.xlim()
+plt.ylim()
+plt.title("HSC 4Wk fix&wash")
+plt.xlabel("SA-BV421")
+plt.ylabel("Frequency_cells_number")
+plt.xlim(xmin=0, xmax = 2500000)
+plt.show()

@@ -1,0 +1,23 @@
+from google.colab import drive 
+drive.mount('/content/gdrive')
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+
+df = pd.read_csv('gdrive/My Drive/a.csv')
+plt.figure(num=None, figsize=(12, 9), dpi=80, facecolor='w', edgecolor='k')
+
+#plt.ylim(ymin=0, ymax = 400)
+#plt.xlim(xmin=0, xmax = 3000000)
+#plt.title("HSC MPP4b no biotin injection", fontsize=20)
+#plt.xlabel("ROI Sum Intensity(SA_BV421)", fontsize=20)
+
+#plt.ylabel("ROI Area", fontsize=20)
+
+ax = sns.barplot( data=df)
+plt.xticks(rotation='vertical', fontsize=20)
+plt.show()

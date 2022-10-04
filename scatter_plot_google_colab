@@ -1,23 +1,25 @@
 from google.colab import drive 
 drive.mount('/content/gdrive')
 
-import seaborn as sns; sns.set()
+import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
 
-plt.figure(num=None, figsize=(12, 9), dpi=80, facecolor='w', edgecolor='k')
 
-plt.rc('font', size=210)          # controls default text sizes
-plt.rc('axes', titlesize=10)     # fontsize of the axes title
-plt.rc('axes', labelsize=10)    # fontsize of the x and y labels
-plt.rc('xtick', labelsize=10)    # fontsize of the tick labels
+
+#figure(num=None, figsize=(12, 9), dpi=80, facecolor='w', edgecolor='k')
+plt.rc('font', size=20)          # controls default text sizes
+plt.rc('axes', titlesize=20)     # fontsize of the axes title
+plt.rc('axes', labelsize=20)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=20)    # fontsize of the tick labels
 plt.rc('ytick', labelsize=10)    # fontsize of the tick labels
-plt.rc('legend', fontsize=10)    # legend fontsize
-plt.rc('figure', titlesize=10)  # fontsize of the figure title
-
-
-
-df = pd.read_csv('DE_proteins.csv')
-myplot = plt.scatter(y="Log10Fold", x="Log2Fold", alpha=0.5, data=df)
-
-
+plt.rc('legend', fontsize=20)    # legend fontsize
+plt.rc('figure', titlesize=20)  # fontsize of the figure title
+df = pd.read_csv('gdrive/My Drive/220728XS01_all_cell_ezh2.csv')
+df.head()
+plt.title("Ezh2_647 expression level")
+#plt.ylim(ymin=0, ymax = 100000000)
+myplot = sns.boxplot(data=df)
+myplot.set_xticklabels(myplot.get_xticklabels(), rotation=90)
 plt.show()

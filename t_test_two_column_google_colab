@@ -1,0 +1,23 @@
+from google.colab import drive 
+drive.mount('/content/gdrive')
+
+import pandas as pd
+import numpy as np
+from scipy import stats
+from scipy.stats import ttest_ind
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('gdrive/My Drive/220728XS01_all_cell_ezh1.csv')
+print(df)
+
+print(df)
+
+stat, p = stats.ttest_ind(df['MPP3_EZH1_555'], df['MPP2_EZH1_555'], nan_policy='omit')
+print(stat_data)
+print('stat=%.3f, p=%.3f' % (stat, p))
+if p > 0.05:
+    print('Probably the same distribution')
+else:
+    print('Probably different distributions')
+plt.hist(df['MPP3_EZH1_555'], bins=5, color='c', edgecolor='k', alpha=0.5)
+plt.hist(df['MPP2_EZH1_555'], bins=5, color='g', edgecolor='k', alpha=0.5)

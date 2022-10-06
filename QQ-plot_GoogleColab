@@ -1,0 +1,14 @@
+# QQ-plot
+import statsmodels.api as sm
+import matplotlib.pyplot as plt
+# res.anova_std_residuals are standardized residuals obtained from ANOVA (check above)
+sm.qqplot(res.anova_std_residuals, line='45')
+plt.xlabel("Theoretical Quantiles")
+plt.ylabel("Standardized Residuals")
+plt.show()
+
+# histogram
+plt.hist(res.anova_model_out.resid, bins='auto', histtype='bar', ec='k') 
+plt.xlabel("Residuals")
+plt.ylabel('Frequency')
+plt.show()

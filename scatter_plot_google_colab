@@ -19,11 +19,12 @@ plt.rc('legend', fontsize=20)    # legend fontsize
 plt.rc('figure', titlesize=20)  # fontsize of the figure title
 
 # load tips dataset from google drive
-df = pd.read_csv('gdrive/My Drive/220601XS01_toma_all_cell.csv')
+df = pd.read_csv('gdrive/My Drive/221017XS02001_hsc_ezh1_ezh2_scatter.csv')
 df.head()
-plt.title("Ezh2_647 expression level")
+plt.title("HSC Ezh1 & Ezh2 expression level")
 #plt.ylim(ymin=0, ymax = 100000000)
-myplot = sns.scatterplot(data=df)
+#myplot = sns.scatterplot(data=df)
+myplot = sns.scatterplot(x = "HSC_Ezh1_555", y = "HSC_Ezh2_647", data = df)
 #myplot.set_xticklabels(myplot.get_xticklabels(), rotation=90)
 
 

@@ -1,6 +1,7 @@
 from google.colab import drive 
 drive.mount('/content/gdrive')
 
+# import libaries
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -16,10 +17,14 @@ plt.rc('xtick', labelsize=20)    # fontsize of the tick labels
 plt.rc('ytick', labelsize=10)    # fontsize of the tick labels
 plt.rc('legend', fontsize=20)    # legend fontsize
 plt.rc('figure', titlesize=20)  # fontsize of the figure title
-df = pd.read_csv('gdrive/My Drive/220728XS01_all_cell_ezh2.csv')
+
+# load tips dataset from google drive
+df = pd.read_csv('gdrive/My Drive/220601XS01_toma_all_cell.csv')
 df.head()
 plt.title("Ezh2_647 expression level")
 #plt.ylim(ymin=0, ymax = 100000000)
-myplot = sns.boxplot(data=df)
-myplot.set_xticklabels(myplot.get_xticklabels(), rotation=90)
+myplot = sns.scatterplot(data=df)
+#myplot.set_xticklabels(myplot.get_xticklabels(), rotation=90)
+
+
 plt.show()

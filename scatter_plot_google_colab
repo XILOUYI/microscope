@@ -8,8 +8,8 @@ import seaborn as sns
 import numpy as np
 
 
+sns.set(rc={'figure.figsize':(12,9)})
 
-#figure(num=None, figsize=(12, 9), dpi=80, facecolor='w', edgecolor='k')
 plt.rc('font', size=20)          # controls default text sizes
 plt.rc('axes', titlesize=20)     # fontsize of the axes title
 plt.rc('axes', labelsize=20)    # fontsize of the x and y labels
@@ -21,7 +21,7 @@ plt.rc('figure', titlesize=20)  # fontsize of the figure title
 # load tips dataset from google drive
 df = pd.read_csv('gdrive/My Drive/221017XS02001_hsc_ezh1_ezh2_scatter.csv')
 df.head()
-plt.title("HSC Ezh1 & Ezh2 expression level")
+plt.title("HSC Ezh1 & Ezh2 expression level (Conjugated Primary Antibodies 1:100 dilution")
 #plt.ylim(ymin=0, ymax = 100000000)
 #myplot = sns.scatterplot(data=df)
 myplot = sns.scatterplot(x = "HSC_Ezh1_555", y = "HSC_Ezh2_647", data = df)
